@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo/Estilo.css">
+    <title>Cadastro Demanda</title>
+</head>
+
+<body onload="verificaLogado();obtemDados('cadastro')" class="BdCadastro">
+    <nav id="Nav" class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="text-right">
+            <ul class="navbar-nav ms-auto flex-nowrap">
+                <li class="nav-item">
+                  <button class="btn  btn-block btn-danger" onclick="logoutFirebase()">Logout</button>
+                  <body>
+                    <img id="imge" src="imagens/fatec.png">
+                    </body> 
+                </li>
+            </ul>
+        </div>
+        </div>
+      </nav>
+      
+      <div class="container-fluid" id="base">
+        <div class="row">
+        <div class="col-md-4">
+          <h1 class="TCadastro">Cadastro de alunos</h1>
+          <form id="formCadastro">
+            <div class="form-group mt-3">
+              <label for="nome">Nome:</label>
+              <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" autofocus>
+            </div>
+            <div class="form-group mt-3">
+              <label for="sobrenome">Sobrenome:</label>
+              <input type="text" class="form-control" name="sobrenome" step="0.01" id="sobrenome" placeholder="Sobrenome" min="1">
+            </div>
+            <div class="form-group mt-3">
+              <label for="email">Email l📧:</label>
+              <input type="email" class="form-control" name="email" id="email">
+            </div>
+            <div class="form-group mt-3">
+              <label for="dataNascimento">Data de Nascimento 👶:</label>
+              <input type="date" class="form-control" name="dataNascimento" id="dataNascimento">
+            </div>
+            <div class="form-group my-3" >
+              <label for="genero">Genero:</label>
+              <input type="radio" class="btn-check" name="genero" id="Masculino"  value="Masculino">
+              <label class="btn btn-outline-primary" for="Masculino">Masculino 🙋‍♂️</label>
+            
+              <input type="radio" class="btn-check" name="genero" id="Feminino" value="Feminino">
+              <label class="btn btn-outline-danger" for="Feminino">Feminino 🙋</label>
+            </div>
+            <div class="form-group my-3" >
+              <label for="Cursos">Informe o curso pretendido:</label>
+              <br>
+                    
+              <input type="radio" class="btn-check" name="Cursos" id="GTI"  value="GTI" >
+              <label class="btn btn-outline-dark" for="GTI">GTI</label>
+
+              <input type="radio" class="btn-check" name="Cursos" id="ADS"  value="ADS" >
+              <label class="btn btn-outline-warning" for="ADS">ADS</label>
+              
+              <input type="radio" class="btn-check" name="Cursos" id="GE"  value="GE" >
+              <label class="btn btn-outline-danger" for="GE">GE</label>
+             
+              <input type="radio" class="btn-check" name="Cursos" id="Eventos"  value="Eventos" >
+              <label class="btn btn-outline-primary" for="Eventos">Eventos</label>
+
+              <input type="radio" class="btn-check" name="Cursos" id="Mecatronica"  value="Mecatronica" >
+              <label class="btn btn-outline-success" for="Mecatronica">Mecatronica</label>
+            </div>
+            <div class="form-group">
+              <input type="hidden" class="form-control" name="id" id="id" >
+            </div>
+            <button class="btn btn-block btn-success my-4" onclick="salvar(event, 'cadastro')">💾 Salvar</button>
+            <button type="reset" class="btn btn-block btn-primary my-4" >🧹 Limpar</button>
+          </form>
+        </div>
+      
+    
+        <div class="col-md-7">
+          <h1 class="text-dark">📝Cadastro de Alunos</h1>
+          <table id="tabelaCadastro" class="table table-bordered table-success">
+           
+          </table>
+    
+        </div>
+      </div>
+    </div>
+    
+      <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-database.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="Scripts/firebase.js"></script>  
+      <script src="Scripts/authentication.js"></script>
+      <script src="Scripts/dados.js"></script>
+</body>
+
+</html>

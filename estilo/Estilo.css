@@ -1,0 +1,43 @@
+.login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #fd0808,#eb0707);
+}
+
+.card{
+    width:23%;
+}
+
+
+.Icon{
+    width: 100%;
+}
+
+.TCadastro{
+    color: #0a0a0a;
+}
+
+
+#Nav{
+    background-color: #e1f0f3;
+}
+
+#base{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #e1f0f3;
+}
+
+.Backimgv
+{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
